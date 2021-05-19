@@ -1,6 +1,7 @@
 const Discord = require ("discord.js");
 const client = new Discord.Client;
 const config = require ("./config.json");
+require('custom-env').env('development')
 
 
 var prefix = config.prefix;
@@ -48,4 +49,4 @@ client.on("message", async message => {
 });
 
 
-client.login(config.token);
+client.login(process.env.AUTH_TOKEN);
